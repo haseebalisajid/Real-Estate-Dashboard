@@ -1,5 +1,6 @@
 import { useOne } from "@pankod/refine-core";
 import { useParams } from "@pankod/refine-react-router-v6";
+import { CircularProgress,Box,Typography } from "@pankod/refine-mui";
 
 import { Profile } from "components";
 
@@ -15,7 +16,7 @@ const AgentProfile = () => {
 
     const myProfile = data?.data ?? [];
 
-    if (isLoading) return <div>loading...</div>;
+    if (isLoading) return <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}><Typography><CircularProgress color="secondary" /></Typography></Box>;
     if (isError) return <div>error...</div>;
 
     return (

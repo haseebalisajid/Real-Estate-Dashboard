@@ -1,6 +1,6 @@
 import { useList } from "@pankod/refine-core";
 import { Typography, Box, Stack } from "@pankod/refine-mui";
-
+import { CircularProgress } from "@pankod/refine-mui";
 import {
     PieChart,
     PropertyReferrals,
@@ -20,7 +20,7 @@ const Home = () => {
 
     const latestProperties = data?.data ?? [];
 
-    if (isLoading) return <Typography>Loading...</Typography>;
+    if (isLoading) return <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}><Typography><CircularProgress color="secondary" /></Typography></Box>;
     if (isError) return <Typography>Something went wrong!</Typography>;
 
     return (

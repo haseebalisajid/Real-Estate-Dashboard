@@ -1,5 +1,5 @@
 import { useList } from "@pankod/refine-core";
-import { Box, Typography } from "@pankod/refine-mui";
+import { Box, Typography,CircularProgress } from "@pankod/refine-mui";
 
 import { AgentCard } from "components";
 
@@ -8,7 +8,7 @@ const Agents = () => {
 
     const allAgents = data?.data ?? [];
 
-    if (isLoading) return <div>loading...</div>;
+    if (isLoading) return <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}><Typography><CircularProgress color="secondary" /></Typography></Box>;
     if (isError) return <div>error...</div>;
 
     return (

@@ -7,6 +7,7 @@ import {
     TextField,
     Select,
     MenuItem,
+    CircularProgress
 } from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
 import { useMemo } from "react";
@@ -51,7 +52,7 @@ const AllProperties = () => {
         };
     }, [filters]);
 
-    if (isLoading) return <Typography>Loading...</Typography>;
+    if (isLoading) return <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}><Typography><CircularProgress color="secondary" /></Typography></Box>;
     if (isError) return <Typography>Error...</Typography>;
 
     return (

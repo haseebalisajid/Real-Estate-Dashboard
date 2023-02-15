@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { Typography, Box, Stack,CircularProgress } from "@pankod/refine-mui";
 import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
 import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
 import {
@@ -31,7 +31,7 @@ const PropertyDetails = () => {
     const propertyDetails = data?.data ?? {};
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}><Typography><CircularProgress color="secondary" /></Typography></Box>;
     }
 
     if (isError) {

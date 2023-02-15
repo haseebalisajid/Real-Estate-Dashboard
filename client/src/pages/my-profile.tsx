@@ -1,4 +1,5 @@
 import { useGetIdentity, useOne } from "@pankod/refine-core";
+import { CircularProgress,Box,Typography } from "@pankod/refine-mui";
 
 import { Profile } from "components";
 
@@ -11,7 +12,7 @@ const MyProfile = () => {
 
     const myProfile = data?.data ?? [];
 
-    if (isLoading) return <div>loading...</div>;
+    if (isLoading) return <Box sx={{display:'flex', justifyContent:'center', alignItems:'center'}}><Typography><CircularProgress color="secondary" /></Typography></Box>;
     if (isError) return <div>error...</div>;
 
     return (
